@@ -1,0 +1,2 @@
+recursive-include agent_core/static *
+recursive-include agent_core/src *

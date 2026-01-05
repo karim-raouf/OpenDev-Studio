@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "opendev-studio"
+version = "0.2.1"
+description = "A local Agentic software engineer system accessible via web UI"
+readme = "../README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "fastapi",
+    "uvicorn[standard]",
+    "langchain",
+    "python-dotenv",
+    "langgraph",
+    "langchain_groq",
+    "langchain_openai"
+]
+
+[project.scripts]
+# This is the magic command user types in terminal
+start-opendev = "opendev_studio.main:start"
+
+[tool.setuptools.package-data]
+# Include all files in static, graph, and components
+opendev_studio = ["static/**/*", "graph/**/*", "components/**/*"]
